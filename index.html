@@ -21,14 +21,71 @@
 </head>
 <body>
 
+    <div class="calculatorBody" >
 
+        <table>
+            <tr>
+                <td colspan="4">
+                    <input type="text" name="" id="myResult" >
+                </td>
+            </tr>
+    
+            <tr>
+                <td>
+                    <input type="button" value="C" onclick="remove(' ')"  >
+                    <input type="button" value="(" onclick="calculation('(')">
+                    <input type="button" value=")" onclick="calculation(')')">
+                </td>
+    
+                <td>
+                    <input type="button" value="7" onclick="calculation('7')">
+                    <input type="button" value="8" onclick="calculation('8')">
+                    <input type="button" value="9" onclick="calculation('9')">
+                    <input type="button" value="+" onclick="calculation('+')">
+                </td>
+    
+                <td>
+                    <input type="button" value="4" onclick="calculation('4')">
+                    <input type="button" value="5" onclick="calculation('5')">
+                    <input type="button" value="6" onclick="calculation('6')">
+                    <input type="button" value="-" onclick="calculation('-')">
+                </td>
+    
+                <td>
+                    <input type="button" value="1" onclick="calculation('1')">
+                    <input type="button" value="2" onclick="calculation('2')">
+                    <input type="button" value="3" onclick="calculation('3')">
+                    <input type="button" value="*" onclick="calculation('*')">
+                </td>
+                <td>
+                    <input type="button" value="0" onclick="calculation('0')">
+                    <input type="button" value="." onclick="calculation('.')">
+                    <input type="button" value="/" onclick="calculation('/')">
+                    <input type="button" value="=" onclick="answer()">
+                </td>
+            </tr>
+        </table>
+    </div>
 
     
 
     <script>
 
+        function answer(){
+            var a=document.getElementById('myResult').value;
+            var b=eval(a)
+            document.getElementById('myResult').value=b
 
+        }
 
+        function remove(clear){
+            document.getElementById("myResult").value=clear
+
+        }
+
+        function calculation(inputNumber){
+            document.getElementById("myResult").value+=inputNumber
+        }
     </script>
 
     <!-- bootstrap js -->
